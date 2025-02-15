@@ -5,36 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="webp" href="./Calculator.webp">
-
     <title>Calculator</title>
 </head>
 <body>
-    <div id="calculator">
-        <input id="display" readonly>
-        <div id="key">
-            <button onclick="appendToDisplay(`+`)" class="operator-btn">+</button>
-            <button onclick="appendToDisplay(`7`)">7</button>
-            <button onclick="appendToDisplay(`8`)">8</button>
-            <button onclick="appendToDisplay(`9`)">9</button>
-            <button onclick="appendToDisplay(`-`)" class="operator-btn">-</button>
-            <button onclick="appendToDisplay(`4`)">4</button>
-            <button onclick="appendToDisplay(`5`)">5</button>
-            <button onclick="appendToDisplay(`6`)">6</button>
-            <button onclick="appendToDisplay(`*`)" class="operator-btn">*</button>
-            <button onclick="appendToDisplay(`1`)">1</button>
-            <button onclick="appendToDisplay(`2`)">2</button>
-            <button onclick="appendToDisplay(`3`)">3</button>
-            <button onclick="appendToDisplay(`/`)" class="operator-btn">/</button>
-            <button onclick="appendToDisplay(`0`)">0</button>
-            <button onclick="appendToDisplay(`.`)">.</button>
-            <button onclick="calculate()" class="equal">=</button>
-            <button onclick="clearDisplay()"  class="operator-btn">C</button>
-            <button class="Delete" onclick="backspace()">←</button>
 
+    <nav>
+        <ul>
+            <li><a href="#" data-tab="calculator-container">Calculator</a></li>
+            <li><a href="#" data-tab="history-container">History</a></li>
+        </ul>
+    </nav>
+
+    <div id="calculator-container" class="tab-content active">
+        <div id="calculator">
+            <input id="display" readonly>
+            <div id="key">
+                <button onclick="appendToDisplay(`+`)" class="operator-btn">+</button>
+                <button onclick="appendToDisplay(`7`)">7</button>
+                <button onclick="appendToDisplay(`8`)">8</button>
+                <button onclick="appendToDisplay(`9`)">9</button>
+                <button onclick="appendToDisplay(`-`)" class="operator-btn">-</button>
+                <button onclick="appendToDisplay(`4`)">4</button>
+                <button onclick="appendToDisplay(`5`)">5</button>
+                <button onclick="appendToDisplay(`6`)">6</button>
+                <button onclick="appendToDisplay(`*`)" class="operator-btn">*</button>
+                <button onclick="appendToDisplay(`1`)">1</button>
+                <button onclick="appendToDisplay(`2`)">2</button>
+                <button onclick="appendToDisplay(`3`)">3</button>
+                <button onclick="appendToDisplay(`/`)" class="operator-btn">/</button>
+                <button onclick="appendToDisplay(`0`)">0</button>
+                <button onclick="appendToDisplay(`.`)">.</button>
+                <button onclick="calculate()" class="equal">=</button>
+                <button onclick="clearDisplay()" class="operator-btn">C</button>
+                <button class="Delete" onclick="backspace()">←</button>
+            </div>
         </div>
-
     </div>
 
-        <script src="index.js"></script>
+    
+    <div id="history-container" class="tab-content">
+        <div id="history">
+            <ul id="history-list"></ul>
+        </div>
+        <div id="clearHistoryContainer">  <button id="clearHistory">Clear History</button> </div>      
+    </div>
+
+
+    <script src="index.js"></script>
+
+    <script>
+        // Tab switching logic
+        const navLinks = document.querySelectorAll('nav a');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default link behavior
+
+                const tabId = link.dataset.tab;
+
+                // Hide all tabs
+                tabContents.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+
+                // Show the selected tab
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

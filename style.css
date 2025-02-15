@@ -122,3 +122,100 @@ button:active{
         font-size: 1.2rem;
     }
 }
+
+/* style.css (add these styles) */
+nav {
+    width: 100%;
+    background-color: hsl(0, 0%, 20%);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    background-color: hsl(0, 0%, 30%);
+    border-radius: 5px;
+}
+
+.tab-content {
+    display: none; /* Initially hide all tabs */
+    margin-top: 60px; /* Space for the navbar */
+}
+
+.tab-content.active {
+    display: block; /* Show active tab */
+}
+
+#history {
+    background-color: hsl(0, 0%, 15%); /* Match calculator background */
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 500px; /* Match calculator width */
+    overflow-y: auto; /* Add scroll if content overflows */
+    max-height: calc(100vh - 150px); /* Limit height to screen - navbar - some padding */
+    margin: 20px auto; /* Center the history box */
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#history-list li {
+    padding: 10px;
+    border-bottom: 1px solid hsl(0, 0%, 30%);
+    font-size: 1.2rem;
+}
+
+/* ... rest of your existing CSS */
+
+#clearHistoryContainer {
+    width: 50px; /* Or your desired width/height */
+    height: 50px; /* Must be equal to width for a square */
+    margin: 10px auto; /* Centers horizontally */
+    position: relative; /* Needed for absolute positioning of the button */
+    display: block; /* Ensures the container takes up the full width */
+}
+
+#clearHistory {
+    position: absolute; /* Allows precise positioning */
+    top: 50%; /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjust for true center */
+    width: 100%; /* Fill the container */
+    height: 100%; /* Fill the container */
+    font-size: 0.7rem;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #333;
+}
+
+#clearHistory:hover {
+    text-decoration: underline;
+}
