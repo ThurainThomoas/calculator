@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -7,33 +7,33 @@ body{
     background-color: hsl(0, 0%, 95%);
 }
 
-#calculator{
+#calculator {
     font-family: Arial, sans-serif;
     background-color: hsl(0, 0%, 15%);
     border-radius: 15px;
     width: 500px;
     overflow: hidden;
+    max-width: 100%;
 }
 
-#display{
+#display {
     width: 100%;
     padding: 20px;
     font-size: 5rem;
     text-align: left;
     border: none;
-    background-color: hsl(0, 0%, 20%); color: white;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
 }
 
-
-#key{
+#key {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 25px;
 }
 
-
-button{
+button {
     width: 100px;
     height: 100px;
     border-radius: 50px;
@@ -45,24 +45,23 @@ button{
     cursor: pointer;
 }
 
-
-button:hover{
+button:hover {
     background-color: hsl(0, 0%, 40%);
 }
 
-button:active{
+button:active {
     background-color: hsl(0, 0%, 50%);
 }
 
-.operator-btn{
+.operator-btn {
     background-color: hsl(35, 100%, 55%);
 }
 
-.operator-btn:hover{
+.operator-btn:hover {
     background-color: hsl(35, 100%, 65%);
 }
 
-.operator-btn:active{
+.operator-btn:active {
     background-color: hsl(35, 100%, 75%);
 }
 
@@ -74,56 +73,6 @@ button:active{
     background-color: red;
 }
 
-
-
-/* Responsive for medium devices, e.g., tablets */
-@media screen and (max-width: 768px) {
-    #calculator {
-        max-width: 400px;
-    }
-    #display {
-        font-size: 3rem;
-    }
-    button {
-        width: 70px;
-        height: 70px;
-        font-size: 2rem;
-    }
-}
-
-/* Responsive for small devices, e.g., phones */
-@media screen and (max-width: 480px) {
-    #calculator {
-        max-width: 300px;
-    }
-    #display {
-        font-size: 2rem;
-        padding: 15px;
-    }
-    button {
-        width: 55px;
-        height: 55px;
-        font-size: 1.5rem;
-    }
-}
-
-/* Responsive for extra small devices, e.g., very small phone screens */
-@media screen and (max-width: 320px) {
-    #calculator {
-        max-width: 250px;
-    }
-    #display {
-        font-size: 1.5rem;
-        padding: 10px;
-    }
-    button {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-}
-
-/* style.css (add these styles) */
 nav {
     width: 100%;
     background-color: hsl(0, 0%, 20%);
@@ -160,23 +109,23 @@ nav ul li a:hover {
 }
 
 .tab-content {
-    display: none; /* Initially hide all tabs */
-    margin-top: 60px; /* Space for the navbar */
+    display: none;
+    margin-top: 60px;
 }
 
 .tab-content.active {
-    display: block; /* Show active tab */
+    display: block;
 }
 
 #history {
-    background-color: hsl(0, 0%, 15%); /* Match calculator background */
+    background-color: hsl(0, 0%, 15%);
     color: white;
     padding: 20px;
     border-radius: 15px;
-    width: 500px; /* Match calculator width */
-    overflow-y: auto; /* Add scroll if content overflows */
-    max-height: calc(100vh - 150px); /* Limit height to screen - navbar - some padding */
-    margin: 20px auto; /* Center the history box */
+    width: 500px;
+    overflow-y: auto;
+    max-height: calc(100vh - 150px);
+    margin: 20px auto;
 }
 
 #history-list {
@@ -191,23 +140,21 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-/* ... rest of your existing CSS */
-
 #clearHistoryContainer {
-    width: 50px; /* Or your desired width/height */
-    height: 50px; /* Must be equal to width for a square */
-    margin: 10px auto; /* Centers horizontally */
-    position: relative; /* Needed for absolute positioning of the button */
-    display: block; /* Ensures the container takes up the full width */
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    position: relative;
+    display: block;
 }
 
 #clearHistory {
-    position: absolute; /* Allows precise positioning */
-    top: 50%; /* Vertically center */
-    left: 50%; /* Horizontally center */
-    transform: translate(-50%, -50%); /* Adjust for true center */
-    width: 100%; /* Fill the container */
-    height: 100%; /* Fill the container */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
     font-size: 0.7rem;
     padding: 0;
     border: none;
@@ -218,4 +165,124 @@ nav ul li a:hover {
 
 #clearHistory:hover {
     text-decoration: underline;
+}
+
+/* Responsive for medium devices, e.g., tablets */
+@media screen and (max-width: 1024px) {
+    #calculator {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    #display {
+        font-size: 4rem;
+    }
+
+    button {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+    #history {
+        width: 90%;
+        max-width: 380px;
+        padding: 15px;
+    }
+}
+
+/* Responsive for small devices, e.g., phones */
+@media screen and (max-width: 768px) {
+    #calculator {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    #display {
+        font-size: 3.5rem;
+    }
+
+    button {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    #history {
+        width: 90%;
+        max-width: 320px;
+        padding: 10px;
+    }
+
+    #history-list li {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive for extra small devices, e.g., very small phone screens */
+@media screen and (max-width: 480px) {
+    #calculator {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    #display {
+        font-size: 3rem;
+        padding: 15px;
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    #history {
+        width: 90%;
+        max-width: 280px;
+        padding: 8px;
+    }
+
+    #history-list li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive for ultra-small devices */
+/* Responsive for ultra-small devices */
+/* Responsive for ultra-small devices (320px and above) */
+@media screen and (min-width: 320px) {
+    #calculator {
+        width: 93%;
+        max-width: 350px; /* Ensures calculator fits on smaller screens */
+    }
+
+    #display {
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    #history {
+        width: 95%;
+        max-width: 250px;
+        padding: 5px;
+        margin: 10px auto;
+    }
+
+    #history-list li {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    #clearHistoryContainer {
+        width: 40px;
+        height: 40px;
+    }
+
+    #clearHistory {
+        font-size: 0.6rem;
+    }
 }
